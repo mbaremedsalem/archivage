@@ -12,6 +12,8 @@ djangorestframework = "*"
 django-allauth = "*"
 whitenoise = "*"
 gunicorn = "*"
+environs = "*"
+psycopg2 = "==2.9.3"
 
 [dev-packages]
 
