@@ -1,5 +1,6 @@
 from dataclasses import field
 import imp
+from xml.dom.minidom import Document
 from rest_framework import serializers
 from apis import models
 
@@ -13,50 +14,50 @@ class UserSerializers(serializers.ModelSerializer):
 class EmployeeSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model=User
+        model=models.Employee
 
 class Appel_offreSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model=User
+        model=models.Appel_offre
         
 class Avis_passationSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model=User
+        model=models.Avis_passation
         
 class PpmSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model=User
+        model=models.Ppm
         
 class ContratSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model=User
+        model=models.Contrat
         
 class ComptabiliteSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model=User
+        model=models.Comptabilite
         
 class CongeSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model=User
+        model=models.Conge
         
 class Ordre_missionSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model=User
+        model=models.Ordre_mission
         
 class DocumentsSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model=User
+        model=Document
         
 class CourrierSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model=User
+        model=models.Courrier
 
