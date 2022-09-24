@@ -33,7 +33,7 @@ urlpatterns = [
     path('conge/',ListConge.as_view(), name='conge'),
     path('conge/<int:pk>/',DetailConge.as_view()),
     
-    path('ordre_mission/',ListOrdre_mission.as_view(), name='ordre_mission'),
+    path('ordre_mission',ListOrdre_mission.as_view(), name='ordre_mission'),
     path('ordre_mission/<int:pk>/',DetailOrdre_mission.as_view()),
     
     path('documents/',ListDocuments.as_view(), name='documents'),
