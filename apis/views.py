@@ -159,3 +159,52 @@ class DetailCourrier(generics.RetrieveUpdateDestroyAPIView):
     serializer_class= CourrierSerializers  
 
 
+@api_view(['POST'])
+@permission_classes([])
+@authentication_classes([])
+def loginclient(request):
+    uuu = request.data['username']
+    ppp = request.data['password']
+    null=None
+    try:
+        u=authenticate(username=uuu,password=ppp)
+    except:
+        return Response(
+            {
+                'status': False,
+                'message': 'no client for this information',
+                'data': null
+            },
+            status.HTTP_200_OK
+        )
+        
+    try:
+        
+        login(request,u)
+        try:
+            token = Token.objects.get(user=u)
+        except:
+            token = Token.objects.create(user=u)
+
+        return Response(
+            {
+                'id':u.id,
+                'status': True,
+                'token': str(token),
+                'message':'login success',
+                'data':{
+                    'username':u.username
+                }
+            },
+            status.HTTP_200_OK
+        )
+    except:
+        return Response(
+            {
+                'status': False,
+                'message': 'no client for this information',
+                'data': null
+            },
+            status.HTTP_200_OK
+        )
+        
