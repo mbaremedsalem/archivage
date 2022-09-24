@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
+from environs import Env
 
+env = Env() # new
+env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -87,7 +90,7 @@ WSGI_APPLICATION = 'arrchivage.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-"default": "sqlite:///db.sqlite3" # new
+"default": env.dj_db_url("DATABASE_URL") 
 }
 
 
