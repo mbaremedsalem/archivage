@@ -19,7 +19,7 @@ from django.urls.conf import include
 from drf_spectacular.views import SpectacularAPIView,SpectacularRedocView,SpectacularSwaggerView
 
 urlpatterns = [
-    path('', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', include('apis.urls', namespace='apis')),
     
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
