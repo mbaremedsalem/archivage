@@ -41,5 +41,4 @@ urlpatterns = [
     
     path('courrier/',ListCourrier.as_view(), name='courrier'),
     path('courrier/<int:pk>/',DetailCourrier.as_view()),
-    
 ]

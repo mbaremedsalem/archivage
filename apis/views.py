@@ -157,3 +157,5 @@ class ListCourrier(generics.ListCreateAPIView):
 class DetailCourrier(generics.RetrieveUpdateDestroyAPIView):
     queryset=Courrier.objects.all()
     serializer_class= CourrierSerializers  
+
+
