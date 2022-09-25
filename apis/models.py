@@ -20,8 +20,8 @@ class Employee(models.Model):
         return self.user.username
     
 class Appel_offre(models.Model):
-    sujet = models.CharField(max_length=100, default="", editable=False)
-    description = models.TextField(max_length=400, default="", editable=False)
+    sujet = models.CharField(max_length=100)
+    description = models.TextField(max_length=400)
     adresse = models.CharField(max_length=100, default="", editable=False)
     poste = models.CharField(max_length=10)
     reference = models.CharField(max_length=100, default="", editable=False)
