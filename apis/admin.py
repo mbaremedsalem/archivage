@@ -8,6 +8,7 @@ class ClientAdmin(admin.ModelAdmin):
 
 
 
+
 admin.site.register(Ppm)
 admin.site.register(Appel_offre)
 
