@@ -54,7 +54,7 @@ class Ordre_missionSerializers(serializers.ModelSerializer):
 class DocumentsSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
-        model=Document
+        model=models.Documents
         
 class CourrierSerializers(serializers.ModelSerializer):
     class Meta:
