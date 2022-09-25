@@ -11,4 +11,8 @@ class ClientAdmin(admin.ModelAdmin):
 
 admin.site.register(Ppm)
 admin.site.register(Appel_offre)
-
+admin.site.register(Contrat)
+admin.site.register(Ordre_mission)
+admin.site.register(Comptabilite)
+admin.site.register(Documents)
+admin.site.register(Conge)
