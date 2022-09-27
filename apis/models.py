@@ -15,7 +15,7 @@ class Employee(models.Model):
     description = models.TextField(max_length=400)
     adresse = models.CharField(max_length=100)
     poste = models.CharField(max_length=10)
-    date_n = models.DateTimeField(auto_now_add=True)
+    date_n = models.DateTimeField()
     def __str__(self):
         return self.user.username
     
@@ -25,8 +25,8 @@ class Appel_offre(models.Model):
     adresse = models.CharField(max_length=100)
     poste = models.CharField(max_length=10)
     reference = models.CharField(max_length=100)
-    date_debut = models.DateTimeField(auto_now_add=True)
-    date_fin = models.DateTimeField(auto_now_add=True)
+    date_debut = models.DateTimeField()
+    date_fin = models.DateTimeField()
     file = models.FileField(upload_to ='static/')
     def __str__(self):
         return self.sujet
@@ -34,7 +34,7 @@ class Avis_passation(models.Model):
     sujet = models.CharField(max_length=100)
     description = models.TextField(max_length=400)
     reference = models.CharField(max_length=100)
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField()
     poste = models.CharField(max_length=10)
     file = models.FileField(upload_to ='static/')
     def __str__(self):
@@ -44,7 +44,7 @@ class Ppm(models.Model):
     sujet = models.CharField(max_length=100)
     description = models.TextField(max_length=400)
     reference = models.CharField(max_length=100)
-    date_debut = models.DateTimeField(auto_now_add=True)
+    date_debut = models.DateTimeField()
     file = models.FileField(upload_to ='static/')
     def __str__(self):
         return self.sujet
@@ -55,8 +55,8 @@ class Contrat(models.Model):
     sujet = models.CharField(max_length=100)
     description = models.TextField(max_length=400)
     reference = models.CharField(max_length=100)
-    date_debut = models.DateTimeField(auto_now_add=True)
-    date_fin = models.DateTimeField(auto_now_add=True)
+    date_debut = models.DateTimeField()
+    date_fin = models.DateTimeField()
     salaire = models.DecimalField(max_digits=10, decimal_places=2)
     file = models.FileField(upload_to ='static/')
     def __str__(self):
@@ -66,8 +66,8 @@ class Comptabilite(models.Model):
     sujet = models.CharField(max_length=100)
     description = models.TextField(max_length=400)
     reference = models.CharField(max_length=100)
-    date_debut = models.DateTimeField(auto_now_add=True)
-    date_fin = models.DateTimeField(auto_now_add=True)
+    date_debut = models.DateTimeField()
+    date_fin = models.DateTimeField()
     file = models.FileField(upload_to ='static/')
     def __str__(self):
         return self.sujet
@@ -78,8 +78,8 @@ class Conge(models.Model):
     
     sujet = models.CharField(max_length=100)
     reference = models.CharField(max_length=100)
-    date_debut = models.DateTimeField(auto_now_add=True)
-    date_fin = models.DateTimeField(auto_now_add=True)
+    date_debut = models.DateTimeField()
+    date_fin = models.DateTimeField()
     file = models.FileField(upload_to ='static/')
     def __str__(self):
         return self.sujet
@@ -89,8 +89,8 @@ class Ordre_mission(models.Model):
     
     sujet = models.CharField(max_length=100)
     objet = models.CharField(max_length=100)
-    date_debut = models.DateTimeField(auto_now_add=True)
-    date_fin = models.DateTimeField(auto_now_add=True)
+    date_debut = models.DateTimeField()
+    date_fin = models.DateTimeField()
     localisation = models.CharField(max_length=100)
     file = models.FileField(upload_to ='static/')
     def __str__(self):
