@@ -43,4 +43,6 @@ urlpatterns = [
     path('courrier/<int:pk>/',DetailCourrier.as_view()),
     
     path('loginclient/', loginclient, name='loginclient'),
+
+    path('addconge/',addconge,name='addconge')
 ]
