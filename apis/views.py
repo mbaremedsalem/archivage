@@ -72,15 +72,15 @@ class DetailAvis_passation(generics.RetrieveUpdateDestroyAPIView):
 
 @permission_classes([IsAuthenticated])
 @authentication_classes([TokenAuthentication])
-class ListPpm(generics.ListCreateAPIView):    
-    queryset=Ppm.objects.all()
-    serializer_class = PpmSerializers
+class ListPassassion(generics.ListCreateAPIView):    
+    queryset=passation.objects.all()
+    serializer_class = PassassionSerializers
 
 @permission_classes([IsAuthenticated])
 @authentication_classes([TokenAuthentication])
-class DetailPpm(generics.RetrieveUpdateDestroyAPIView):
-    queryset=Ppm.objects.all()
-    serializer_class= PpmSerializers  
+class DetailPassassion(generics.RetrieveUpdateDestroyAPIView):
+    queryset=passation.objects.all()
+    serializer_class= PassassionSerializers  
 
 
 @permission_classes([IsAuthenticated])
@@ -204,41 +204,6 @@ def loginclient(request):
                 'status': False,
                 'message': 'no client for this information',
                 'data': null
-            },
-            status.HTTP_200_OK
-        )
-        
-
-@api_view(['POST'])
-@permission_classes([])
-@authentication_classes([])
-def addconge(request):   
-    employe = request.data['employe']
-    sujet = request.data['sujet']
-    reference = request.data['reference']
-    date_debut = request.data['date_debut']
-    date_fin = request.data['date_fin']
-    file = request.File['file']
-    user=User.objects.get(username=employe)
-    emp = Employee.objects.get(user=user)
-    try:
-        conge = Conge.objects.create(employe=emp, sujet=sujet,reference=reference,date_debut=date_debut,date_fin=date_fin,file=file)
-        conge.save()
-        return Response(
-        {
-            'employe': conge.employe.user.username,
-            'sujet': conge.sujet,
-            'reference': conge.reference,
-            'date_debut': conge.date_debut,
-            'date_fin': conge.date_fin,
-            'file': conge.file
-        },
-        status.HTTP_200_OK
-    )
-    except:
-        return Response(
-            {
-                'message': 'employe mahu 5alg'
             },
             status.HTTP_200_OK
         )

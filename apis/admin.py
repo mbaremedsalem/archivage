@@ -8,7 +8,7 @@ class ClientAdmin(admin.ModelAdmin):
 
 
 
-
+admin.site.register(passation)
 admin.site.register(Ppm)
 admin.site.register(Appel_offre)
 admin.site.register(Contrat)

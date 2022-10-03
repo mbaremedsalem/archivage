@@ -21,8 +21,8 @@ urlpatterns = [
     path('passation/',ListAvis_passation.as_view(), name='passation'),
     path('passation/<int:pk>/',DetailAvis_passation.as_view()),
     
-    path('ppm/',ListPpm.as_view(), name='ppm'),
-    path('ppm/<int:pk>/',DetailPpm.as_view()),
+    path('passassion/',ListPassassion.as_view(), name='ppm'),
+    path('passassion/<int:pk>/',DetailPassassion.as_view()),
     
     path('contrat/',ListContrat.as_view(), name='contrat'),
     path('contrat/<int:pk>/',DetailContrat.as_view()),
@@ -43,6 +43,4 @@ urlpatterns = [
     path('courrier/<int:pk>/',DetailCourrier.as_view()),
     
     path('loginclient/', loginclient, name='loginclient'),
-
-    path('addconge/',addconge,name='addconge')
 ]

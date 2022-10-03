@@ -114,3 +114,13 @@ class Courrier(models.Model):
     file = models.FileField(upload_to ='static/')
     def __str__(self):
         return self.sujet
+
+class passation(models.Model):
+    sujet = models.CharField(max_length=100)
+    numeromarche = models.TextField(max_length=400)
+    reference = models.CharField(max_length=100)
+    financement = models.CharField(max_length=100)
+    date = models.DateField()
+    file = models.FileField(upload_to ='static/')
+    def __str__(self):
+        return self.sujet
