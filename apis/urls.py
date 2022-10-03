@@ -3,6 +3,8 @@ from django.urls import path
 from django.urls.conf import include
 from apis.views import *
 
+
+
 app_name='apis'
 
 urlpatterns = [
@@ -18,8 +20,8 @@ urlpatterns = [
     path('appel_offre/',ListAppel_offre.as_view(), name='appel_offre'),
     path('appel_offre/<int:pk>/',DetailListAppel_offre.as_view()),
     
-    path('passationk/',ListAvis_passation.as_view(), name='passation'),
-    path('passationk/<int:pk>/',DetailAvis_passation.as_view()),
+    path('passation/',ListAvis_passation.as_view(), name='passation'),
+    path('passation/<int:pk>/',DetailAvis_passation.as_view()),
     
     path('passassion/',ListPassassion.as_view(), name='PAS'),
     path('passassion/<int:pk>/',DetailPassassion.as_view()),
