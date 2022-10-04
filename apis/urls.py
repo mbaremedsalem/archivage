@@ -1,8 +1,6 @@
-from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 from apis.views import *
-
 
 
 app_name='apis'
@@ -45,4 +43,6 @@ urlpatterns = [
     path('courrier/<int:pk>/',DetailCourrier.as_view()),
     
     path('loginclient/', loginclient, name='loginclient'),
+
+    path('updatepassassion',updatepassassion,name='updatepassassion')
 ]

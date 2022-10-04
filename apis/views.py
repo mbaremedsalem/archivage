@@ -207,3 +207,26 @@ def loginclient(request):
             },
             status.HTTP_200_OK
         )
+
+@api_view(['POST'])
+@permission_classes([])
+@authentication_classes([])
+def updatepassassion(request,id):
+    sujet=request.data['sujet']
+    reference=request.data['reference']
+    numeromarche=request.data['numeromarche']
+    financement=request.data['financement']
+
+    pas=passation.objects.get(id=id)
+    pas.sujet=sujet
+    pas.reference=reference
+    pas.numeromarche=numeromarche
+    pas.financement=financement
+    pas.save()
+    return Response(
+            {
+                'sujet':pas.sujet,
+                'financement':pas.financement
+            },
+            status.HTTP_200_OK
+        )
