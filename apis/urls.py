@@ -44,5 +44,5 @@ urlpatterns = [
     
     path('loginclient/', loginclient, name='loginclient'),
 
-    path('updatepassassion',updatepassassion,name='updatepassassion')
+    path('updatepassassion/<int:pk>/',updatepassassion,name='updatepassassion')
 ]
