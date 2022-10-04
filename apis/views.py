@@ -208,7 +208,7 @@ def loginclient(request):
             status.HTTP_200_OK
         )
 
-@api_view(['PUT'])
+@api_view(['POST'])
 @permission_classes([])
 @authentication_classes([])
 def updatepassassion(request,id):
