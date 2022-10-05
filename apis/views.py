@@ -82,6 +82,17 @@ class DetailPassassion(generics.RetrieveUpdateDestroyAPIView):
     queryset=passation.objects.all()
     serializer_class= PassassionSerializers  
 
+@permission_classes([IsAuthenticated])
+@authentication_classes([TokenAuthentication])
+class ListCompta(generics.ListCreateAPIView):    
+    queryset=compta.objects.all()
+    serializer_class = comptaSerializers
+
+@permission_classes([IsAuthenticated])
+@authentication_classes([TokenAuthentication])
+class DetailCompta(generics.RetrieveUpdateDestroyAPIView):
+    queryset=compta.objects.all()
+    serializer_class= comptaSerializers 
 
 @permission_classes([IsAuthenticated])
 @authentication_classes([TokenAuthentication])

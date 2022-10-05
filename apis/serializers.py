@@ -66,3 +66,8 @@ class PassassionSerializers(serializers.ModelSerializer):
         fields = '__all__'
         model=models.passation
 
+class comptaSerializers(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model=models.compta
+

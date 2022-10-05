@@ -29,6 +29,9 @@ urlpatterns = [
     
     path('comptabilite/',ListComptabilite.as_view(), name='comptabilite'),
     path('comptabilite/<int:pk>/',DetailComptabilite.as_view()),
+
+    path('compta/',ListCompta.as_view(), name='comptabilite'),
+    path('compta/<int:pk>/',DetailCompta.as_view()),
     
     path('conge/',ListConge.as_view(), name='conge'),
     path('conge/<int:pk>/',DetailConge.as_view()),
