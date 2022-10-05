@@ -241,3 +241,31 @@ def updatepassassion(request,id):
             },
             status.HTTP_200_OK
         )
+
+@api_view(['POST'])
+@permission_classes([])
+@authentication_classes([])
+def updatecompta(request,id):
+    montant=request.data['montant']
+    beneficiaire=request.data['beneficiaire']
+    imf=request.data['imf']
+    motif=request.data['motif']
+    numfact=request.data['numfact']
+    net=request.data['net']
+    modepay=request.data['modepay']
+
+    pas=compta.objects.get(id=id)
+    pas.montant=montant
+    pas.beneficiaire=beneficiaire
+    pas.imf=imf
+    pas.motif=motif
+    pas.numfact=numfact
+    pas.net=net
+    pas.modepay=modepay
+    pas.save()
+    return Response(
+            {
+                'mode':pas.modepay,
+            },
+            status.HTTP_200_OK
+        )
