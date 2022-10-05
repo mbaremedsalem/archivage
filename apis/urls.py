@@ -49,5 +49,6 @@ urlpatterns = [
 
     path('updatepassassion/<int:id>/',updatepassassion,name='updatepassassion'),
 
-    path('updatecompta/<int:id>/',updatecompta,name='updatecompta')
+    path('updatecompta/<int:id>/',updatecompta,name='updatecompta'),
+    path('stat/',stat,name='stat')
 ]

@@ -269,3 +269,18 @@ def updatecompta(request,id):
             },
             status.HTTP_200_OK
         )
+
+
+@api_view(['GET'])
+@permission_classes([])
+@authentication_classes([])
+def stat(request):
+    pas = passation.objects.count()
+    com=compta.objects.count()
+    return Response(
+            {
+                'pas':pas,
+                'com':com
+            },
+            status.HTTP_200_OK
+        )
