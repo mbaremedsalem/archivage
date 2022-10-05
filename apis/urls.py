@@ -27,7 +27,7 @@ urlpatterns = [
     path('contrat/',ListContrat.as_view(), name='contrat'),
     path('contrat/<int:pk>/',DetailContrat.as_view()),
     
-    path('comptabilite/',ListComptabilite.as_view(), name='comptabilite'),
+    path('comptabilite/',ListComptabilite.as_view(), name='compta'),
     path('comptabilite/<int:pk>/',DetailComptabilite.as_view()),
 
     path('compta/',ListCompta.as_view(), name='comptabilite'),
