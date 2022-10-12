@@ -132,6 +132,7 @@ class compta(models.Model):
     numfact=models.CharField(max_length=100)
     motif=models.CharField(max_length=100)
     imf=models.CharField(max_length=100)
+    drf=models.CharField(max_length=100,null=True)
     net=models.DecimalField(max_digits=10, decimal_places=2)
     modepay=models.CharField(max_length=100)
     file = models.FileField(upload_to ='static/')
