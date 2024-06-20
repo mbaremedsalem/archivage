@@ -50,5 +50,9 @@ urlpatterns = [
     path('updatepassassion/<int:id>/',updatepassassion,name='updatepassassion'),
 
     path('updatecompta/<int:id>/',updatecompta,name='updatecompta'),
-    path('stat/',stat,name='stat')
+    path('stat/',stat,name='stat'),
+
+
+    path('coord/',ListCord.as_view(), name='coord'),
+    path('coord/<int:pk>/',DetailCord.as_view()),
 ]

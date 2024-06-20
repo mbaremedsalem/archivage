@@ -61,6 +61,11 @@ class CourrierSerializers(serializers.ModelSerializer):
         fields = '__all__'
         model=models.Courrier
 
+class CoordSerializers(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model=models.coord
+
 class PassassionSerializers(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'

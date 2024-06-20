@@ -253,6 +253,7 @@ def updatecompta(request,id):
     numfact=request.data['numfact']
     net=request.data['net']
     modepay=request.data['modepay']
+    drf=request.data['drf']
 
     pas=compta.objects.get(id=id)
     pas.montant=montant
@@ -262,6 +263,7 @@ def updatecompta(request,id):
     pas.numfact=numfact
     pas.net=net
     pas.modepay=modepay
+    pas.drf=drf
     pas.save()
     return Response(
             {
@@ -284,3 +286,17 @@ def stat(request):
             },
             status.HTTP_200_OK
         )
+
+
+
+@permission_classes([IsAuthenticated])
+@authentication_classes([TokenAuthentication])
+class ListCord(generics.ListCreateAPIView):    
+    queryset=coord.objects.all()
+    serializer_class = CoordSerializers
+
+@permission_classes([IsAuthenticated])
+@authentication_classes([TokenAuthentication])
+class DetailCord(generics.RetrieveUpdateDestroyAPIView):
+    queryset=coord.objects.all()
+    serializer_class= CoordSerializers  

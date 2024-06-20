@@ -138,3 +138,9 @@ class compta(models.Model):
     file = models.FileField(upload_to ='static/')
     def __str__(self):
         return self.beneficiaire
+
+class coord(models.Model):
+    sujet=models.CharField(max_length=1000)
+    date = models.DateField()
+    def __str__(self):
+        return self.sujet
